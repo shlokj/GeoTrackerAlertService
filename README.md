@@ -16,8 +16,9 @@ For this task, I decided that 5 seconds would be an accurate and apt monitoring 
 At a high level, the program effectively flows as follows:
 
 1. Retrive location information on all 6 clinicians from the API.
-2. If any of them was previously in their safe zone but is now outside it, trigger an email alert. If this is not the first time they left the zone, include the number of times they left in the email.
-3. Repeat 720 times (5 seconds * 720 = 3600 seconds = 1 hour).
+2. If, for whatever reason, the endpoint doesn't return, send an email alert and retry after the monitoring interval. This alert is sent once every minute at maximum.
+3. If any clinician was previously in their safe zone but is now outside it, trigger an email alert. If this is not the first time they left the zone, include the number of times they left in the email.
+4. Repeat 720 times (5 seconds * 720 = 3600 seconds = 1 hour).
 
 ### Packages/Libraries used
 
@@ -43,3 +44,12 @@ However, if the company decides that they need to be alerted only once when a cl
 Additionally, it is possible that a clinician is on the edge of their bounding polygon, in which case simple GPS error can result in them being detected as moving in and out frequently. In such cases, capping the number of email alerts sent (to, say, 1 per minute or 5 minutes) can potentially reduce repetitive alerts. I have currently implemented this for the case where the endpoint doesn't return and we have JSON that does not indicate anything about location, but just an error. If the API is down for a long duration, not having a timeout of this sort would mean a lot of spam emails.
 
 We can also implement additional features like daily reports on each clinician if this service is to stay live for long durations.
+
+## Unit test results - email alerts
+
+<img width="1109" alt="image" src="https://user-images.githubusercontent.com/34567765/166189339-e434917e-cf68-4cee-97a4-f4cf7468a29e.png">
+
+<img width="1109" alt="image" src="https://user-images.githubusercontent.com/34567765/166188630-be32ccb6-c70b-4446-8493-4037e21ddf60.png">
+
+<img width="1111" alt="image" src="https://user-images.githubusercontent.com/34567765/166188746-1dead7ad-c949-416f-bea2-df5e72fdb78b.png">
+
