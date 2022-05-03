@@ -60,7 +60,7 @@ class GeoTrackerAlertService:
             gjDict = geoJsonReq.json() # in a dictionary so we can work with it
             self.log.debug("getGeoJSONDict: make GET request and store in dictionary")
             return gjDict
-        except Except as e:
+        except Exception as e:
             self.log.error("getGeoJSONDict: Failed to get location")
             self.log.error(str(e))
             self.sendEmail(self, self.emailSubjectLocationLost(p), self.emailBodyLocationLost(p))
