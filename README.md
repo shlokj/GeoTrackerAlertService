@@ -47,7 +47,7 @@ We can also implement additional features like daily reports on each clinician i
 
 ## Unit test results - email alerts
 
-<img width="1109" alt="image" src="https://user-images.githubusercontent.com/34567765/166189339-e434917e-cf68-4cee-97a4-f4cf7468a29e.png">
+<img width="1112" alt="image" src="https://user-images.githubusercontent.com/34567765/166391427-af854af0-7846-4a69-9d63-1db665d95a28.png">
 
 <img width="1109" alt="image" src="https://user-images.githubusercontent.com/34567765/166188630-be32ccb6-c70b-4446-8493-4037e21ddf60.png">
 
