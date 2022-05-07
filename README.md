@@ -2,6 +2,10 @@
 
 This system aims to ensure that all mobile clinicians of a health startup are safe and within their designated locations. It monitors their locations in real-time and sends alerts if any of them leave their safe area.
 
+## Architecture
+
+<img width="1008" alt="image" src="https://user-images.githubusercontent.com/34567765/167245198-2cd00889-1082-45a7-aeac-3c06275b3ffe.png">
+
 ## How?
 
 Firstly, this service, written in Python 3, is run on one of [UCLA's SEASnet Linux Servers](https://www.seasnet.ucla.edu/lnxsrv/), which has email capabilities. Any user with a SEASnet account can send emails using the `mail` command in `bash`. Find the main code for this system in service.py.
@@ -44,7 +48,7 @@ Additionally, it is possible that a clinician is on the edge of their bounding p
 
 We can also implement additional features like daily reports on each clinician if this service is to stay live for long durations.
 
-## Unit test results - email alerts
+## Testing - email alerts
 
 <img width="1112" alt="image" src="https://user-images.githubusercontent.com/34567765/166391427-af854af0-7846-4a69-9d63-1db665d95a28.png">
 
